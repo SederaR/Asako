@@ -3,7 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>R.Sedera | Portfolio</title>
+<title>Ralaivao Sedera | Product Designer UX/UI & Graphiste à Madagascar</title>
+<meta name="description" content="Portfolio officiel de Ralaivao Sedera, Product Designer UX/UI et Graphiste à Madagascar. Découvrez mes projets UI/UX, branding, design web, applications mobiles et identités visuelles.">
+<meta name="keywords" content="Ralaivao Sedera, UX Designer Madagascar, UI Designer Madagascar, Product Designer, Graphiste Madagascar, Portfolio UX UI, Figma Designer, Branding, Web Designer Madagascar, Designer Freelance">
+<link rel="canonical" href="https://ruxus.vercel.app/">
+
 <link rel="icon" type="image/png" href="logo.png">
 <meta name="robots" content="index, follow">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -13,30 +17,7 @@
 
 
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Ralaivao Sedera",
-  "jobTitle": "Product Designer UX/UI et Graphiste",
-  "description": "Designer UX/UI spécialisé dans les plateformes web et mobiles.",
-  "url": "https://votre-domaine.com",
-  "sameAs": [
-    "https://www.linkedin.com/in/sedera-ralaivao-charlie48b",
-  ],
-  "knowsAbout": [
-    "UX Design",
-    "UI Design",
-    "Product Design",
-    "Figma",
-    "Design System",
-    "Wireframing",
-    "Prototyping",
-    "Mobile Design",
-    "Web Design"
-  ]
-}
-</script>
+
 
 
 <style>
@@ -222,6 +203,156 @@ html {
 .modal-open {
     overflow: hidden;
 }
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+#mobileMenu{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+    background:#1A1A1A;
+}
+
+#mobileMenu.open{
+    max-height:400px;
+}
+
+#mobileMenu a{
+    display:block;
+    padding:15px 24px;
+    color:#d4d4d8;
+    border-top:1px solid rgba(255,255,255,.05);
+}
+
+#mobileMenu a:hover{
+    color:white;
+}
+
+.cv-btn-mobile{
+    color:#fff !important;
+}
+
+/* ===== TABLETTE ===== */
+
+@media (max-width:1024px){
+
+    .portfolio-grid{
+        grid-template-columns:1fr;
+        gap:3rem;
+    }
+
+    .portfolio-sidebar{
+        position:static;
+    }
+
+    .sticky-tabs-bar{
+        top:80px;
+    }
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width:768px){
+
+    .sticky-tabs-bar{
+        top:76px;
+        padding-top:10px;
+    }
+
+    .tabs-container{
+        gap:1rem !important;
+        overflow-x:auto;
+        flex-wrap:nowrap !important;
+        scrollbar-width:none;
+    }
+
+    .tabs-container::-webkit-scrollbar{
+        display:none;
+    }
+
+    .sidebar-title{
+        font-size:2rem;
+        line-height:1.2;
+    }
+
+    .sidebar-sub{
+        font-size:1rem;
+    }
+
+    .sidebar-desc{
+        font-size:.9rem;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+        gap:.75rem;
+    }
+
+    footer .max-w-7xl{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+    }
+}
+
+/* ===== HERO MOBILE ===== */
+
+@media (max-width:768px){
+
+    section.min-h-screen{
+        padding-top:110px;
+        min-height:auto;
+    }
+
+    section.min-h-screen .grid{
+        grid-template-columns:1fr;
+        gap:50px;
+        text-align:center;
+    }
+
+    section.min-h-screen h1{
+        font-size:3rem !important;
+        line-height:1.1;
+    }
+
+    section.min-h-screen p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .arch-shape{
+        width:280px !important;
+        height:360px !important;
+        margin:auto;
+    }
+
+    .glass{
+        transform:scale(.8);
+    }
+}
+
+/* ===== PETITS TELEPHONES ===== */
+
+@media (max-width:480px){
+
+    section.min-h-screen h1{
+        font-size:2.3rem !important;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .sidebar-title{
+        font-size:1.7rem;
+    }
+
+    .arch-shape{
+        width:240px !important;
+        height:320px !important;
+    }
+}
 </style>
 
 
@@ -258,13 +389,13 @@ html {
 <section class="min-h-screen flex items-center pt-32">
     <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
         <div>
-            <h1 class="text-6xl lg:text-8xl font-bold leading-tight">Bonjour, C'est <br>R.Sedera</h1>
+            <h1 class="text-4xl md:text-6xl lg:text-8xl font-bold leading-tight">Bonjour, C'est <br>R.Sedera</h1>
             <p class="text-zinc-400 mt-8 max-w-xl leading-relaxed">UI/UX & Graphiste, avec plus de 3 ans d'expérience. Transformons les idées en expériences digitales élégantes, performantes et centrées utilisateur.</p>
             <a href="Ralaivao CV.pdf" class="inline-block mt-10 bg-red-800 px-12 py-4 rounded-xl font-semibold hover:bg-red-700 transition">Curriculum vitae</a>
         </div>
         <div class="flex justify-center">
             <div class="relative">
-                <div class="arch-shape w-[420px] h-[550px] bg-red-800 border-4 border-[#E7D8C4] overflow-hidden">
+                <div class="arch-shape w-[280px] h-[360px] md:w-[420px] md:h-[550px] bg-red-800 border-4 border-[#E7D8C4] overflow-hidden">
                     <img src="ff.png" class="absolute bottom-0 left-1/2 -translate-x-1/2 h-full object-contain" alt="R. Sedera">
                 </div>
                 <div class="absolute top-20 left-0 glass rounded-xl p-3">
@@ -345,7 +476,7 @@ html {
 </div>
 
 <footer class="border-t border-zinc-800 py-10">
-    <div class="max-w-7xl mx-auto px-6 flex justify-between">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
         <p class="text-zinc-500 text-xs">© 2026 Ralaivao Sedera</p>
         <p class="text-zinc-500 text-xs">Designed with passion</p>
     </div>
