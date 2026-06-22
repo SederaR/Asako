@@ -353,6 +353,45 @@ html {
         height:320px !important;
     }
 }
+
+/* ===== Responsive Enhancements ===== */
+*{box-sizing:border-box;}
+html,body{overflow-x:hidden;width:100%;}
+img{max-width:100%;height:auto;}
+
+@media (max-width:768px){
+    .max-w-7xl{padding-left:1rem!important;padding-right:1rem!important;}
+    .glass{padding:8px;}
+    .glass img{width:28px!important;}
+    #detailsModal{
+        align-items:flex-start;
+        overflow-y:auto;
+        padding-top:80px;
+    }
+    #detailsModal .grid{
+        grid-template-columns:1fr!important;
+    }
+    #modalTitle{
+        font-size:2rem!important;
+    }
+    .contact-item{
+        font-size:.85rem;
+        word-break:break-word;
+    }
+}
+
+@media (max-width:640px){
+    .gallery-grid{
+        grid-template-columns:repeat(2,1fr)!important;
+    }
+}
+
+@media (max-width:400px){
+    .gallery-grid{
+        grid-template-columns:1fr!important;
+    }
+}
+
 </style>
 
 
@@ -389,8 +428,8 @@ html {
 <section class="min-h-screen flex items-center pt-32">
     <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
         <div>
-            <h1 class="text-4xl md:text-6xl lg:text-8xl font-bold leading-tight">Bonjour, C'est <br>R.Sedera</h1>
-            <p class="text-zinc-400 mt-8 max-w-xl leading-relaxed">UI/UX & Graphiste, avec plus de 3 ans d'expérience. Transformons les idées en expériences digitales élégantes, performantes et centrées utilisateur.</p>
+            <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold leading-tight">Bonjour, C'est <br>R.Sedera</h1>
+            <p class="text-zinc-400 mt-6 md:mt-8 max-w-xl leading-relaxed text-sm md:text-base">UI/UX & Graphiste, avec plus de 3 ans d'expérience. Transformons les idées en expériences digitales élégantes, performantes et centrées utilisateur.</p>
             <a href="Ralaivao CV.pdf" class="inline-block mt-10 bg-red-800 px-12 py-4 rounded-xl font-semibold hover:bg-red-700 transition">Curriculum vitae</a>
         </div>
         <div class="flex justify-center">
