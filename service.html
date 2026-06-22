@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio de Sedera Ralaivao, Product Designer UX/UI avec 3 ans d'expérience. Découvrez mes projets, études de cas et réalisations digitales.">
   <title>Ralaivao Sedera | Product Designer UX/UI à Madagascar</title>
   <link rel="icon" type="image/png" href="logo.png">
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
 
   <style>
     body {
@@ -80,26 +82,149 @@
     @media (max-width: 768px) {
       .services-grid { grid-template-columns: 1fr; }
     }
+
+    /* MENU MOBILE */
+
+.mobile-menu{
+    max-height:0;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    background:#1A1A1A;
+    transition:max-height .35s ease;
+}
+
+.mobile-menu.open{
+    max-height:400px;
+}
+
+.mobile-menu{
+    display:none;
+}
+
+.mobile-menu.open{
+    display:flex;
+}
+
+.mobile-menu a{
+    padding:16px 24px;
+    color:#d4d4d8;
+    border-top:1px solid rgba(255,255,255,.05);
+}
+
+.mobile-menu a.active{
+    color:#ef4444;
+}
+
+.cv-btn-mobile{
+    background:#F0E6D6;
+    color:#000!important;
+    margin:16px;
+    border-radius:999px;
+    text-align:center;
+    font-weight:600;
+}
+
+/* Animation cartes */
+
+.service-card{
+    transition:all .3s ease;
+}
+
+.service-card:hover{
+    border-color:#8B1A1A;
+    transform:translateY(-8px);
+    box-shadow:0 15px 40px rgba(139,26,26,.15);
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    main{
+        padding-top:130px!important;
+    }
+
+    h1{
+        font-size:2.2rem!important;
+        line-height:1.2;
+    }
+
+    footer .max-w-7xl{
+        flex-direction:column;
+        text-align:center;
+        gap:10px;
+    }
+}
+
+header{
+    min-height: 90px;
+}
+
+main{
+    margin-top: 60px;
+}
+
+@media(max-width:768px){
+
+    main{
+        padding-top: 100px !important;
+    }
+
+    .text-center{
+        margin-top: 20px;
+    }
+}
   </style>
 </head>
 <body>
 
 <!-- ===== NAVBAR UNIFIÉE (style 1.PNG) ===== -->
 <header class="fixed top-0 left-0 w-full z-50 bg-[#1A1A1A]/90 backdrop-blur-md border-b border-white/5">
+
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
         <div class="w-12">
-            <a href="index.html"><img src="logo.png" alt="Logo"></a>
+            <a href="index.html">
+                <img src="logo.png" alt="Logo">
+            </a>
         </div>
+
         <nav class="hidden md:flex gap-12 items-center">
-            <a href="index.html" class="text-zinc-300 hover:text-white hover:opacity-70 transition">Portfolio</a>
-            <a href="service.html" class="text-red-500 font-medium hover:opacity-70 transition">Services</a>
-            <a href="about.html" class="text-zinc-300 hover:text-white hover:opacity-70 transition">À propos</a>
-            <a href="Ralaivao CV.pdf" class="bg-[#F0E6D6] text-black px-6 py-3 rounded-full font-medium transition hover:bg-[#E2D5C1]">
+            <a href="index.html" class="text-zinc-300 hover:text-white transition">
+                Portfolio
+            </a>
+
+            <a href="service.html" class="text-red-500 font-medium">
+                Services
+            </a>
+
+            <a href="about.html" class="text-zinc-300 hover:text-white transition">
+                À propos
+            </a>
+
+            <a href="Ralaivao CV.pdf"
+               class="bg-[#F0E6D6] text-black px-6 py-3 rounded-full font-medium hover:bg-[#E2D5C1] transition">
                 Curriculum vitae
             </a>
         </nav>
-        <button id="menuBtn" class="md:hidden text-2xl text-white">☰</button>
+
+        <button id="menuBtn" class="md:hidden text-3xl text-white">
+            ☰
+        </button>
+
     </div>
+
+    <div id="mobileMenu" class="mobile-menu md:hidden">
+    <a href="index.html">Portfolio</a>
+    <a href="service.html" class="active">Services</a>
+    <a href="about.html">À propos</a>
+
+    <a href="Ralaivao CV.pdf" class="cv-btn-mobile">
+        Curriculum vitae
+    </a>
+</div>
+
 </header>
 
 <main class="max-w-7xl mx-auto px-6 pt-40 pb-20">
@@ -164,11 +289,23 @@
 </main>
 
 <footer class="border-t border-zinc-800 py-10 mt-12">
-    <div class="max-w-7xl mx-auto px-6 flex justify-between">
-      <p class="text-zinc-500 text-sm">© 2026 Ralaivao Sedera</p>
-      <p class="text-zinc-500 text-sm">Designed with passion</p>
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-3">
+        <p class="text-zinc-500 text-sm">
+            © 2026 Ralaivao Sedera
+        </p>
+
+        <p class="text-zinc-500 text-sm">
+            Designed with passion
+        </p>
     </div>
 </footer>
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
 
+menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+});
+</script>
 </body>
 </html>
