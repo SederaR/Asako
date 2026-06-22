@@ -12,12 +12,15 @@
 
 <style>
 .mobile-menu{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
     max-height:0;
     overflow:hidden;
-    display:flex;
-    flex-direction:column;
     background:#1A1A1A;
     transition:max-height .35s ease;
+    z-index:100;
 }
 
 .mobile-menu.open{
@@ -44,12 +47,9 @@
 }
 
 @media(max-width:768px){
-
-    #about{
-        margin-top:90px;
-        padding-top:20px;
+    .about-frame-wrap{
+        margin-top:40px;
     }
-
     #about .grid{
         gap:40px;
     }
@@ -70,6 +70,20 @@
         gap:10px;
     }
 }
+
+/* Responsive Enhancements */
+*{box-sizing:border-box;}
+html,body{overflow-x:hidden;width:100%;}
+img{max-width:100%;height:auto;}
+
+@media(max-width:768px){
+  .max-w-7xl,.max-w-3xl{padding-left:1rem!important;padding-right:1rem!important;}
+  .about-photo-box img{width:100%;height:auto;}
+  .about-badge{transform:scale(.9);}
+  #about h2{font-size:2rem!important;}
+  .grid.grid-cols-3{grid-template-columns:1fr!important;}
+}
+
 </style>
 </head>
 <body class="bg-[#1A1A1A] text-white font-['Space_Grotesk']">
@@ -87,7 +101,7 @@
 
         <nav class="hidden md:flex gap-12 items-center">
             <a href="index.html" class="text-zinc-300 hover:text-white transition">
-               Portfolio 
+                Portfolio
             </a>
 
             <a href="service.html" class="text-zinc-300 hover:text-white transition">
@@ -136,7 +150,7 @@
       </div>
       <div>
         <p class="text-xs uppercase tracking-widest text-zinc-500 mb-4">À propos de moi</p>
-        <h2 class="text-4xl font-bold leading-tight mb-6">
+        <h2 class="text-3xl md:text-4xl font-bold leading-tight mb-6">
           Designer passionné<br><span class="text-red-800">& créatif</span>
         </h2>
         <p class="text-zinc-300 leading-relaxed mb-4 text-sm">
@@ -166,7 +180,7 @@
 </section>
 
 <section id="competences" class="py-20 border-t border-zinc-800/50 bg-[#1A1A1A]">
- <div class="max-w-7xl mx-auto px-6">
+  <div class="max-w-3xl mx-auto px-8">
     
     <div class="text-center mb-16">
       <h2 class="text-2xl font-bold text-[#22c55e] uppercase tracking-widest mb-3">Compétences</h2>
